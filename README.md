@@ -52,7 +52,7 @@ This project processes raw product data by inserting it into a PostgreSQL databa
    brew services start postgresql
    ```
 
-   Create a Database:
+5. **Create a Database**
    Open your terminal and run:
    ```bash
    psql -U postgres
@@ -61,7 +61,7 @@ This project processes raw product data by inserting it into a PostgreSQL databa
    (On Windows, install PostgreSQL from the official website and use pgAdmin or psql to create a database.)
    ```
 
-5. **Set Up Google Sheets API**
+6. **Set Up Google Sheets API**
 
    1) Go to the Google Cloud Console, create a new project, and enable the Google Sheets API.
    2) Create OAuth credentials (select "Desktop App"), download the JSON file, rename it to credentials.json, and place it in the project root.
@@ -74,6 +74,6 @@ This project processes raw product data by inserting it into a PostgreSQL databa
    ```
    This command will process the raw CSV data (in raw_product_data.csv), update your PostgreSQL database, generate CSV deliverables, and upload each deliverable to a new Google Sheet.
 
-6. **GitHub Actions (Optional)**
+7. **GitHub Actions (FUTURE AdDITION)**
 
-   A GitHub Actions workflow is provided in .github/workflows/ci.yml to run this pipeline automatically on pushes or pull requests. To use it, add your environment variables as secrets in your GitHub repository settings.
+   A GitHub Actions workflow will be provided in .github/workflows/ci.yml to run this pipeline automatically on pushes or pull requests. To use it, add your environment variables as secrets in your GitHub repository settings.
