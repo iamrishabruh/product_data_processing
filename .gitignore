@@ -11,3 +11,6 @@ venv/
 # Token files for Google Sheets API
 token.pickle
 credentials.json
+
+# Personal product data
+raw_product_data.csv
