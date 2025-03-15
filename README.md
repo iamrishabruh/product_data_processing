@@ -3,13 +3,15 @@
 This project processes raw product data by inserting it into a PostgreSQL database, splitting it into CSV deliverables, and uploading those deliverables to Google Sheets. Follow these simple steps to clone, configure, and run the project.
 
 1. **Clone the Repository**  
+
    Open your terminal and run:
    ```bash
    git clone git@github.com:iamrishabruh/product_data_processing.git
    cd product_data_processing
    ```
    
-2. **Set Up Your Python Environment**
+3. **Set Up Your Python Environment**
+
    Create and activate a virtual environment:
 
    On macOS/Linux:
@@ -28,7 +30,8 @@ This project processes raw product data by inserting it into a PostgreSQL databa
    pip install -r requirements.txt
    ```
 
-3. **Configure Environment Variables**
+5. **Configure Environment Variables**
+
    Copy the sample environment file and update it with your credentials:
    ```bash
    cp .env.example .env
@@ -45,14 +48,16 @@ This project processes raw product data by inserting it into a PostgreSQL databa
     (Make sure .env is added to .gitignore so your credentials aren’t pushed to GitHub.)
    ```
 
-4. **Set Up PostgreSQL**
+7. **Set Up PostgreSQL**
+
    macOS: Install PostgreSQL using Homebrew:
    ```bash
    brew install postgresql
    brew services start postgresql
    ```
 
-5. **Create a Database**
+9. **Create a Database**
+
    Open your terminal and run:
    ```bash
    psql -U postgres
@@ -61,7 +66,7 @@ This project processes raw product data by inserting it into a PostgreSQL databa
    (On Windows, install PostgreSQL from the official website and use pgAdmin or psql to create a database.)
    ```
 
-6. **Set Up Google Sheets API**
+11. **Set Up Google Sheets API**
 
    1) Go to the Google Cloud Console, create a new project, and enable the Google Sheets API.
    2) Create OAuth credentials (select "Desktop App"), download the JSON file, rename it to credentials.json, and place it in the project root.
@@ -74,6 +79,6 @@ This project processes raw product data by inserting it into a PostgreSQL databa
    ```
    This command will process the raw CSV data (in raw_product_data.csv), update your PostgreSQL database, generate CSV deliverables, and upload each deliverable to a new Google Sheet.
 
-7. **GitHub Actions (FUTURE AdDITION)**
+11. **GitHub Actions (FUTURE ADDITION)**
 
    A GitHub Actions workflow will be provided in .github/workflows/ci.yml to run this pipeline automatically on pushes or pull requests. To use it, add your environment variables as secrets in your GitHub repository settings.
